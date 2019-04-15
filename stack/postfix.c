@@ -58,7 +58,7 @@ element peek(StackType *s)
 	else return s->data[s->top];
 }
 // ===== 스택 코드의 끝 ===== 
-int eval(char exp[])
+int eval(const char *exp)
 {
 	int op1, op2, value, i = 0;
 	int len = strlen(exp); //들어온 후위표기식의 길이
