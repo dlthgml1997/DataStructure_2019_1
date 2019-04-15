@@ -70,7 +70,7 @@ int prec(char op) // 연산자 우선순위 반환
 	return -1; // 오류
 }
 // 중위 표기수식 -> 후위 표기수식
-void infix_to_postfix(char exp[])
+void infix_to_postfix(const char *exp)
 {
 	int i = 0;
 	char ch, top_op;
