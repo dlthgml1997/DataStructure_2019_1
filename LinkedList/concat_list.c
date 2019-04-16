@@ -30,8 +30,8 @@ ListNode* concat_list(ListNode *head1, ListNode *head2)
 	else if (head2 == NULL) return head1;
 	else {
 		ListNode *p; // p 생성
-			p = head1;
-		while (p->link != NULL) 
+		p = head1;
+		while (p->link != NULL)
 			p = p->link;
 		p->link = head2; // head1 이끝나면 head2와 연결
 		return head1; // head1 반환
@@ -52,5 +52,6 @@ int main(void) {
 
 	ListNode *total = concat_list(head1, head2);
 	print_list(total);
+	// == print_list(head1);
 	return 0;
 }
