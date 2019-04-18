@@ -20,7 +20,7 @@ double power(double x, int n) //순환
 
 int main(){
 
-	printf("반복 : %.1f \n", slow_power(2, 3));
-	printf("순환 : %.1f \n", power(4, 3));
+	printf("반복 : %.1f \n", slow_power(2, 3)); // 시간복잡도 : O(n) , 실제 수행속도: 7.17초
+	printf("순환 : %.1f \n", power(4, 3)); // 시간복잡도 : O(log n), 실제 수행속도 : 0.47초
 	return 0;
 }
