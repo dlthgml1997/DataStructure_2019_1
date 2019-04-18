@@ -76,7 +76,7 @@ double* math_high(student *student, double length)
 	}
 	double max[] = { id,score };
 	return &max;
-}
+} //잘못 된 코드 추후에 고치기
 
 double* eng_high(student *student, double length)
 {
