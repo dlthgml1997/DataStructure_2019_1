@@ -1,4 +1,4 @@
-/*
+
 #include <stdio.h>
 
 int main() {
@@ -7,7 +7,7 @@ int main() {
 	p = &q;
 	q = 10;
 	x = (*p)++;
-	printf("%d,%d\n", x, *p);
+	printf("%d,%d\n", x, *p); // 11
 	return 0;
 
-}*/
+}
