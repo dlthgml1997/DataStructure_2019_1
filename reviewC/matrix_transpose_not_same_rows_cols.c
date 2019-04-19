@@ -5,8 +5,8 @@
 
 void matrix_transpose(int A[ROWS][COLS], int B[COLS][ROWS]) // B의 cols rows는 A의 rows cols
 {
-	for (int r = 0; r < ROWS; r++) //열
-		for (int c = 0; c < COLS; c++) //행
+	for (int r = 0; r < ROWS; r++) //행
+		for (int c = 0; c < COLS; c++) //열
 			B[c][r] = A[r][c];
 }
 
