@@ -4,8 +4,8 @@
 //행렬 전치 함수
 void matrix_transpose(int A[ROWS][COLS], int B[ROWS][COLS]) //A = 전치할 행렬 ,B=전치된 행렬
 {
-	for (int r = 0; r < ROWS; r++) {
-		for (int c = 0; c < COLS; c++)
+	for (int r = 0; r < ROWS; r++) { //열
+		for (int c = 0; c < COLS; c++) //행
 			B[r][c] = A[c][r];
 	}
 }
