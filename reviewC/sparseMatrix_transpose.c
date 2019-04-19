@@ -28,7 +28,7 @@ SparseMatrix matrix_transpose2(SparseMatrix a)
 		bindex = 0;
 		for (int c = 0; c < a.cols; c++) { //a의 열의개수만큼
 			for (int i = 0; i < a.terms; i++) { //a의 0이 아닌 항의 개수 만큼
-				if (a.data[i].col == c) {
+				if (a.data[i].col == c) { //열이 0인 항부터 넣는다
 					b.data[bindex].row = a.data[i].col;
 					b.data[bindex].col = a.data[i].row;
 					b.data[bindex].value = a.data[i].value;
