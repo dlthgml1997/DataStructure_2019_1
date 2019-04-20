@@ -70,8 +70,8 @@ int eval(const char *exp)
 	{
 		ch = exp[i];
 		if (ch != '+'&&ch != '/'&&ch != '*'&&ch != '-')
-		{
-			value = ch - '0'; // 입력이 피연산자이면
+		{// 입력이 피연산자이면
+			value = ch - '0';  //아스키코드 -> 10진수
 			push(&s, value);
 		}
 		else
