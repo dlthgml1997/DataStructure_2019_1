@@ -7,14 +7,16 @@ typedef int element;
 
 typedef struct {
 	element array[MAX_LIST_SIZE];
-	int size;
+	int size; //현재 리스트에 저장된 항목들의 갯수
 } ArrayListType;
+
 //오류 함수
 void error(char *message)
 {
 	fprintf(stderr, "%s\n", message);
 	exit(1);
 }
+
 //초기화 함수
 void init(ArrayListType *L)
 {
@@ -30,6 +32,7 @@ int is_full(ArrayListType *L)
 {
 	return L->size == MAX_LIST_SIZE;
 }
+
 // pos번째 요소 반환
 element get_entry(ArrayListType *L, int pos)
 {
@@ -38,7 +41,9 @@ element get_entry(ArrayListType *L, int pos)
 		error("위치 오류");
 	}
 	return L->array[pos];
+
 }
+
 //리스트 출력
 void print_list(ArrayListType *L)
 {
