@@ -12,7 +12,6 @@ typedef char element; // int ->char
 typedef struct {
 	element data[MAX_STACK_SIZE];
 	int top;
-
 } StackType;
 
 // 스택 초기화 함수
@@ -65,7 +64,7 @@ int prec(char op) // 연산자 우선순위 반환
 	{
 	case '(': case ')': return 0;
 	case '+': case '-': return 1;
-	case '*': case '/': return 2;
+	case '*': case '/': return 2; //우선순위가 제일 높음
 	}
 	return -1; // 오류
 }
@@ -84,8 +83,9 @@ void infix_to_postfix(const char *exp)
 		switch (ch)
 		{
 		case '+': case '-': case '/': case '*':
-			while (!is_empty(&s) && (prec(ch) <= prec(peek(&s))))// 비어있지 않고, 스택에 있는 연산자의 우선순위가 크거나 같으면
-			printf("%c", pop(&s));
+			// 비어있지 않고, 스택에 있는 연산자의 우선순위가 크거나 같으면
+			while (!is_empty(&s) && (prec(ch) <= prec(peek(&s))))
+				printf("%c", pop(&s));
 			push(&s, ch); // 비어있거나, 스택에 있는 연산자의 우선순위가 더 작으면
 			break;
 		case '(':
@@ -93,7 +93,7 @@ void infix_to_postfix(const char *exp)
 			break;
 		case ')':
 			top_op = pop(&s); // ch로 안하는 이유는 )는 출력되면 안되니까! 
-			while (top_op != '(')
+			while (top_op != '(') // '('는 출력하지 않는다.
 			{
 				printf("%c", top_op);
 				top_op = pop(&s);
@@ -111,7 +111,8 @@ void infix_to_postfix(const char *exp)
 int main() {
 	char *s = "(2+3)*4+9";
 	printf("중위표시수식 %s \n", s);
-	printf("후위표시수식 ");
+	printf("후위표시
+		수식 ");
 	infix_to_postfix(s);
 	printf("\n");
 	return 0;
