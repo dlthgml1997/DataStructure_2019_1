@@ -75,7 +75,7 @@ int eval(const char *exp)
 			push(&s, value);
 		}
 		else
-		{ //연산자이면 피연산자를 스택에서 제거
+		{ //연산자이면  2개를 스택에서 제거
 			op2 = pop(&s);
 			op1 = pop(&s);
 			switch (ch)
