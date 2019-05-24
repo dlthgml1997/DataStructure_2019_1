@@ -13,7 +13,8 @@ void main()
 	double duration;
 	int i;
 	start = clock();
-	for (i = 0 ;i < 1000000; i++)
+	for (i = 0 ;i < 1000000; i++
+		)
 		slow_power(1.125,1000);
 
 	finish = clock();
